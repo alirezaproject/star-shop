@@ -6,13 +6,36 @@
     <title>EndPoint</title>
     <base href="/" />
     <link href="css/app.css" rel="stylesheet" />
-    
+
+    <link rel="stylesheet" href="assets/css/vendor/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/vendor/materialdesignicons.css">
+    <!-- plugin-------------------------------------->
+    <link rel="stylesheet" href="assets/css/vendor/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/vendor/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/vendor/nice-select.css">
+    <link rel="stylesheet" href="assets/css/vendor/jquery.jqZoom.css">
+    <link rel="stylesheet" href="assets/css/vendor/sweetalert2.min.css">
+    <!-- main-style---------------------------------->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
     <!-- If you add any scoped CSS files, uncomment the following to load them
     <link href="EndPoint.Client.styles.css" rel="stylesheet" /> -->
 </head>
 
 <body>
-    <div id="app">Loading...</div>
+    <div id="app">
+        <div class="P-loader">
+            <div class="P-loader-content">
+                <div class="logo-loader">
+                    <img src="assets/images/logo.png" alt="logo">
+                </div>
+                <div class="pic-loader text-center">
+                    <img src="assets/images/three-dots.svg" width="50" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div id="blazor-error-ui">
         An unhandled error has occurred.
@@ -20,6 +43,21 @@
         <a class="dismiss">🗙</a>
     </div>
     <script src="_framework/blazor.webassembly.js"></script>
+
+    <!-- file js---------------------------------------------------->
+    <script src="/assets/js/vendor/jquery-3.2.1.min.js"></script>
+    <script src="/assets/js/vendor/bootstrap.js"></script>
+    <!-- plugin----------------------------------------------------->
+    <script src="/assets/js/vendor/owl.carousel.min.js"></script>
+    <script src="/assets/js/vendor/jquery.countdown.js"></script>
+    <script src="/assets/js/vendor/jquery.nice-select.min.js"></script>
+    <script src="/assets/js/vendor/jquery.jqZoom.js"></script>
+    <script src="/assets/js/vendor/sweetalert2.all.min.js"></script>
+    <!-- main js---------------------------------------------------->
+    <script src="/assets/js/main.js"></script>
+
 </body>
+
+
 
 </html>
