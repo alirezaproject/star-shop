@@ -11,4 +11,11 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.3" PrivateAssets="all" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\EndPoint\Shared\EndPoint.Shared.csproj" />
+  </ItemGroup>
+
+
+ 
+
 </Project>

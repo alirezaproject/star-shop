@@ -8,14 +8,20 @@
 
   <ItemGroup>
     <Folder Include="Interfaces\Contexts\" />
+    <Folder Include="Interfaces\Services\Categories\" />
+    <Folder Include="Requests\Categories\" />
+    <Folder Include="Services\Categories\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.4" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Domain\Domain.csproj" />
+    <ProjectReference Include="..\EndPoint\Shared\EndPoint.Shared.csproj" />
   </ItemGroup>
 
 </Project>

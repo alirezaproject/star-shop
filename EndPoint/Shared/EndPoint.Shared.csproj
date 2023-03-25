@@ -11,6 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Constants\" />
+    <Folder Include="DTOs\Categories\CategoryTypes\" />
   </ItemGroup>
 </Project>

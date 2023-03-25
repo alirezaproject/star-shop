@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 
-    <title>EndPoint.Admin</title>
+    <title>پنل مدیریت فروشگاه ستاره</title>
     <base href="/" />
     <link href="css/app.css" rel="stylesheet" />
     <meta name="description" content="">
@@ -41,7 +41,19 @@
 </head>
 
 <body>
-    <div id="app">Loading...</div>
+    <div id="app">
+     
+        <div style="position: absolute; top: 30vh; width: 100%; text-align: center;">
+            <h1>پنل مدیریت فروشگاه ستاره</h1>
+            <div style="display: flex; gap: 10px; justify-content: center; align-items: center">
+                <div class="spinner-border" role="status"></div>
+                در حال بارگذاری ...
+            </div>
+        </div>
+
+    </div>
+
+
 
     <div id="blazor-error-ui">
         An unhandled error has occurred.
@@ -50,20 +62,21 @@
     </div>
     <script src="_framework/blazor.webassembly.js"></script>
 
-<!-- Core JS -->
-<!-- build:js assets/vendor/js/core.js -->
-<script src="/assets/vendor/libs/jquery/jquery.js"></script>
-<script src="/assets/vendor/libs/popper/popper.js"></script>
-<script src="/assets/vendor/js/bootstrap.js"></script>
-<script src="/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <!-- Core JS -->
+    <!-- build:js assets/vendor/js/core.js -->
+    <script src="/assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="/assets/vendor/libs/popper/popper.js"></script>
+    <script src="/assets/vendor/js/bootstrap.js"></script>
+    <script src="/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
 
-<script src="/assets/vendor/libs/hammer/hammer.js"></script>
+    <script src="/assets/vendor/libs/hammer/hammer.js"></script>
 
-<script src="/assets/vendor/js/menu.js"></script>
-<!-- endbuild -->
-<!-- Vendors JS -->
-<!-- Main JS -->
-<script src="/assets/js/main.js"></script>
+    <script src="/assets/vendor/js/menu.js"></script>
+    <!-- endbuild -->
+    <!-- Vendors JS -->
+    <!-- Main JS -->
+    <script src="/assets/js/main.js"></script>
+
 </body>
 
 </html>

@@ -22,6 +22,142 @@ namespace Persistence.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("Domain.Categories.CategoryBrand", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Brand")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<DateTime>("InsertTime")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValue(new DateTime(2023, 3, 22, 13, 24, 7, 309, DateTimeKind.Local).AddTicks(5131));
+
+                    b.Property<bool>("IsRemoved")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<DateTime?>("RemoveTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("UpdateTime")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CategoryBrands");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Brand = "سامسونگ"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Brand = "شیائومی"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Brand = "اپل"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Brand = "هوآوی"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Brand = "نوکیا"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Brand = "ال جی"
+                        });
+                });
+
+            modelBuilder.Entity("Domain.Categories.CategoryType", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("InsertTime")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValue(new DateTime(2023, 3, 22, 13, 24, 7, 309, DateTimeKind.Local).AddTicks(7165));
+
+                    b.Property<bool>("IsRemoved")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<int?>("ParentCategoryTypeId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("RemoveTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<DateTime?>("UpdateTime")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ParentCategoryTypeId");
+
+                    b.ToTable("CategoryTypes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Type = "کالای دیجیتال"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            ParentCategoryTypeId = 1,
+                            Type = "لوازم جانبی گوشی"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            ParentCategoryTypeId = 2,
+                            Type = "پایه نگهدارنده گوشی"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            ParentCategoryTypeId = 2,
+                            Type = "پاور بانک"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            ParentCategoryTypeId = 2,
+                            Type = "کیف و کاور گوشی"
+                        });
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole<string>", b =>
                 {
                     b.Property<string>("Id")
@@ -220,10 +356,14 @@ namespace Persistence.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("InsertTime")
-                        .HasColumnType("datetime2");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValue(new DateTime(2023, 3, 22, 13, 24, 7, 309, DateTimeKind.Local).AddTicks(9568));
 
                     b.Property<bool>("IsRemoved")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<DateTime?>("RemoveTime")
                         .HasColumnType("datetime2");
@@ -232,6 +372,20 @@ namespace Persistence.Migrations
                         .HasColumnType("datetime2");
 
                     b.HasDiscriminator().HasValue("User");
+                });
+
+            modelBuilder.Entity("Domain.Categories.CategoryType", b =>
+                {
+                    b.HasOne("Domain.Categories.CategoryType", "ParentCategoryType")
+                        .WithMany("SubType")
+                        .HasForeignKey("ParentCategoryTypeId");
+
+                    b.Navigation("ParentCategoryType");
+                });
+
+            modelBuilder.Entity("Domain.Categories.CategoryType", b =>
+                {
+                    b.Navigation("SubType");
                 });
 #pragma warning restore 612, 618
         }

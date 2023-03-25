@@ -1,3 +1,4 @@
+using Application.Extensions;
 using EndPoint.Server.Extensions;
 using Infrastructure.Extensions;
 using Microsoft.AspNetCore.ResponseCompression;
@@ -9,6 +10,7 @@ builder.Services.AddRazorPages();
 
 builder.Services.AddServerLayer(builder.Configuration);
 builder.Services.AddInfrastructureLayer(builder.Configuration);
+builder.Services.AddApplicationLayer();
 
 
 
